@@ -5,39 +5,103 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Village Defense</title>
   <style>
-    body {
-      font-family: "Arial", sans-serif;
-      background-color: #1e1e1e;
-      color: #f0f0f0;
-      text-align: center;
-      padding: 50px;
+    /* Endesga 32 inspired palette */
+    :root {
+      --dark-bg: #1a1a1a;
+      --mid-bg: #2e2137;
+      --accent-gold: #f7d51d;
+      --accent-red: #ff0044;
+      --accent-blue: #1d57f7;
+      --accent-green: #38b764;
+      --text-light: #fff1e8;
     }
-    h1 { color: #ffcc00; }
+
+    body {
+      margin: 0;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, var(--mid-bg), var(--dark-bg));
+      color: var(--text-light);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.3em;
+      color: var(--accent-gold);
+      text-shadow: 0 0 10px rgba(247,213,29,0.4);
+    }
+
+    p.tagline {
+      font-size: 1.3em;
+      color: #fce3a7;
+      margin-bottom: 40px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
     .button {
       display: inline-block;
-      margin: 15px;
-      padding: 15px 30px;
-      font-size: 18px;
+      padding: 16px 32px;
+      font-size: 1.1em;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
-      background-color: #0078ff;
-      color: white;
       text-decoration: none;
-      transition: 0.2s;
+      color: var(--text-light);
+      transition: all 0.2s ease-in-out;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
-    .button:hover {
-      background-color: #005fcc;
+
+    .button.download {
+      background-color: var(--accent-blue);
+    }
+    .button.download:hover {
+      background-color: #4b7aff;
+      transform: scale(1.05);
+    }
+
+    .button.feedback {
+      background-color: var(--accent-green);
+    }
+    .button.feedback:hover {
+      background-color: #54d984;
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: auto;
+      font-size: 0.9em;
+      color: #a89bb9;
+      padding-top: 50px;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.2em; }
+      .button { width: 80%; font-size: 1em; }
     }
   </style>
 </head>
 <body>
   <h1>Village Defense</h1>
-  <p>A fantasy JRPG built in Godot. Test the latest demo and share your feedback!</p>
+  <p class="tagline">Protect the valley from the monsters of the mist!</p>
 
-  <a href="https://drive.google.com/uc?export=download&id=1pqgvn15C7bhNAVS57PRTVXzRTVNdZSzz" class="button">⬇️ Download Game</a>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSQfVvR3tb8YQT35z_nKu22EymHAmQoNdFdEDBGPzVtnijzw/viewform?usp=sharing&ouid=110993499414547181758" class="button" style="background-color:#28a745;">📝 Give Feedback</a>
+  <div class="buttons">
+    <a href="https://drive.google.com/uc?export=download&id=1pqgvn15C7bhNAVS57PRTVXzRTVNdZSzz" class="button download">⬇️ Download Game</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSQfVvR3tb8YQT35z_nKu22EymHAmQoNdFdEDBGPzVtnijzw/viewform?usp=sharing&ouid=110993499414547181758" class="button feedback">📝 Give Feedback</a>
+  </div>
 
-  <p style="margin-top:30px; font-size:14px;">Created by Nick Avtges — © 2025</p>
+  <footer>
+    <p>Created by Nick Avtges • © 2025</p>
+  </footer>
 </body>
 </html>
